@@ -266,7 +266,24 @@ restore_cache() {
   elif [[ "$cache_status" == "valid" ]]; then
     header "Restoring cache"
     if [[ "$cache_directories" == "" ]]; then
+      echo 'MIKE CACHE INFO'
+      echo "$BUILD_DIR"
+      ls "$BUILD_DIR"
+      echo "$BUILD_DIR"
+      echo "$CACHE_DIR"
+      ls "$CACHE_DIR"
+      ls "$CACHE_DIR/node_modules"
+      ls "$CACHE_DIR/node_modules"
+      echo "$YARN_CACHE_FOLDER"
+      ls "$YARN_CACHE_FOLDER"
       restore_default_cache_directories "$BUILD_DIR" "$CACHE_DIR" "$YARN_CACHE_FOLDER"
+      echo "$BUILD_DIR"
+      ls "$BUILD_DIR"
+      echo "$CACHE_DIR"
+      ls "$CACHE_DIR"
+      echo "$YARN_CACHE_FOLDER"
+      ls "$YARN_CACHE_FOLDER"
+      echo 'MIKE CACHE INFO DONE'
     else
       restore_custom_cache_directories "$BUILD_DIR" "$CACHE_DIR" "$cache_directories"
     fi
